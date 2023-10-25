@@ -5,3 +5,15 @@ contestant_data = [
     # ...
     {"season": "Season10", "contestant": "Contestant30", "placement": 10, "strategy": "Social Game"},
 ]
+import pandas as pd
+
+# Create a DataFrame from the contestant data
+df = pd.DataFrame(contestant_data)
+
+# Calculate average placement for each strategy
+strategy_avg_placement = df.groupby('strategy')['placement'].mean().reset_index()
+
+# Count the number of contestants in each strategy category
+strategy_counts = df['strategy'].value_counts().reset_index()
+
+# You can perform more analysis as needed
