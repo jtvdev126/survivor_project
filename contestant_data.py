@@ -1,7 +1,6 @@
 contestant_data = [
     {"season": "Season44", "contestant": "Contestant1", "placement": 1, "strategy": "Alliance"},
     {"season": "Season44", "contestant": "Contestant2", "placement": 2, "strategy": "Challenge Beast"},
-    # Add data for the remaining contestants
     {"season": "Season44", "contestant": "Contestant3", "placement": 3, "strategy": "Social Game"},
     {"season": "Season44", "contestant": "Contestant4", "placement": 4, "strategy": "Social Game"},
     {"season": "Season44", "contestant": "Contestant5", "placement": 5, "strategy": "Social Game"},
