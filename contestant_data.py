@@ -78,8 +78,8 @@ strategy_avg_placement = df.groupby(['season', 'strategy'])['placement'].mean().
 sns.set_style("whitegrid")
 
 # Create a horizontal grouped bar chart
-plt.figure(figsize=(12,8))
-sns.barplot(x='placement', y='strategy', hue='season', data=strategy_avg_placement, ci=None)
+plt.figure(figsize=(10,6))
+sns.barplot(x='placement', y='season', hue='strategy', data=strategy_avg_placement, ci=None)
 plt.xlabel('Average Placement')
 plt.ylabel('Strategy')
 plt.title('Average Placement by Strategy in Survivor for Multiple Seasons')
