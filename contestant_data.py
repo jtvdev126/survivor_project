@@ -71,20 +71,32 @@ df = pd.DataFrame(contestant_data)
 # Calculate average placement for each strategy
 strategy_avg_placement = df.groupby(['season', 'strategy'])['placement'].mean().reset_index()
 
+# Pivot the data to make it sutiable for a stacked bar chart
+stacked_data = strategy_avg_placement.pivot(index='season', columns='strategy', values='placement').fillna(0)
+
 # Count the number of contestants in each strategy category
 # strategy_counts = df['strategy'].value_counts().reset_index()
 
 # Set the style of the plot
 sns.set_style("whitegrid")
 
-# Create a horizontal grouped bar chart
+# Create a stacked horizontal bar chart
 plt.figure(figsize=(10,6))
-sns.barplot(x='placement', y='season', hue='strategy', data=strategy_avg_placement, ci=None)
+stacked_data.plot(kind='barh', stacked=True)
 plt.xlabel('Average Placement')
-plt.ylabel('Strategy')
+plt.ylabel('Season')
 plt.title('Average Placement by Strategy in Survivor for Multiple Seasons')
-plt.legend(title='Season')
+plt.legend(title='Strategy')
 plt.show()
+
+# Create a horizontal grouped bar chart
+#plt.figure(figsize=(10,6))
+#sns.barplot(x='placement', y='season', hue='strategy', data=strategy_avg_placement, ci=None)
+#plt.xlabel('Average Placement')
+#plt.ylabel('Strategy')
+#plt.title('Average Placement by Strategy in Survivor for Multiple Seasons')
+#plt.legend(title='Season')
+#plt.show()
 
 # Plot average placement by strategy as a horizontal graph
 #plt.figure(figsize=(10, 6))
