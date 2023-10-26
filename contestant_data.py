@@ -48,8 +48,8 @@ import matplotlib.pyplot as plt
 # Plot average placement by strategy
 plt.figure(figsize=(10, 6))
 plt.bar(strategy_avg_placement['strategy'], strategy_avg_placement['placement'])
-plt.xlabel('Strategy')
-plt.ylabel('Average Placement')
-plt.title('Average Placement by Strategy in Survivor')
-plt.xticks(rotation=0)
+plt.xlabel('Strategy', fontsize=14)
+plt.ylabel('Average Placement', fontsize=14)
+plt.title('Average Placement by Strategy in Survivor', fontsize=18)
+plt.xticks(rotation=0, fontsize=9)
 plt.show()
