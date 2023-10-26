@@ -1,3 +1,7 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+
 contestant_data = [
     {"season": "Season44", "contestant": "Contestant1", "placement": 1, "strategy": "Alliance"},
     {"season": "Season44", "contestant": "Contestant2", "placement": 2, "strategy": "Challenge Beast"},
@@ -60,7 +64,6 @@ contestant_data = [
     {"season": "Season43", "contestant": "Contestant29", "placement": 29, "strategy": "Social Game"},
     {"season": "Season43", "contestant": "Contestant30", "placement": 30, "strategy": "Social Game"},
 ]
-import pandas as pd
 
 # Create a DataFrame from the contestant data
 df = pd.DataFrame(contestant_data)
@@ -72,8 +75,6 @@ strategy_avg_placement = df.groupby('strategy')['placement'].mean().reset_index(
 strategy_counts = df['strategy'].value_counts().reset_index()
 
 # You can perform more analysis as needed
-
-import matplotlib.pyplot as plt
 
 # Plot average placement by strategy as a horizontal graph
 plt.figure(figsize=(10, 6))
