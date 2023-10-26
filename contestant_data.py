@@ -75,11 +75,11 @@ strategy_counts = df['strategy'].value_counts().reset_index()
 
 import matplotlib.pyplot as plt
 
-# Plot average placement by strategy
+# Plot average placement by strategy as a horizontal graph
 plt.figure(figsize=(10, 6))
-plt.bar(strategy_avg_placement['strategy'], strategy_avg_placement['placement'])
-plt.xlabel('Strategy', fontsize=14)
-plt.ylabel('Average Placement', fontsize=14)
+plt.barh(strategy_avg_placement['strategy'], strategy_avg_placement['placement'])
+plt.ylabel('Strategy', fontsize=14)
+plt.xlabel('Average Placement', fontsize=14)
 plt.title('Average Placement by Strategy in Survivor', fontsize=18)
-plt.xticks(rotation=0, fontsize=9)
+#plt.xticks(rotation=0, fontsize=9)
 plt.show()
