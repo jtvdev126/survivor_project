@@ -72,7 +72,7 @@ df = pd.DataFrame(contestant_data)
 strategy_avg_placement = df.groupby(['season', 'strategy'])['placement'].mean().reset_index()
 
 # Count the number of contestants in each strategy category
-strategy_counts = df['strategy'].value_counts().reset_index()
+# strategy_counts = df['strategy'].value_counts().reset_index()
 
 # You can perform more analysis as needed
 
