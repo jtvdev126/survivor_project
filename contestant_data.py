@@ -2,6 +2,13 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 
+# Insert import of csv file here
+# Define the path to Excel file
+# excel_file = "survivor_data.xlsx"
+
+# Read the data from the Excel file
+# df = pd.read_excel(excel_file)
+
 contestant_data = [
     {"season": "Season44", "contestant": "Contestant1", "placement": 1, "strategy": "Alliance"},
     {"season": "Season44", "contestant": "Contestant2", "placement": 2, "strategy": "Challenge Beast"},
@@ -66,6 +73,7 @@ contestant_data = [
 ]
 
 # Create a DataFrame from the contestant data
+# Remove this if using an Excel file with contestant data
 df = pd.DataFrame(contestant_data)
 
 # Calculate average placement for each strategy
@@ -78,10 +86,10 @@ stacked_data = strategy_avg_placement.pivot(index='season', columns='strategy', 
 # strategy_counts = df['strategy'].value_counts().reset_index()
 
 # Set the style of the plot
-sns.set_style("whitegrid")
+#sns.set_style("whitegrid")
 
 # Create a stacked horizontal bar chart
-plt.figure(figsize=(10,6))
+plt.figure(figsize=(12,8))
 stacked_data.plot(kind='barh', stacked=True)
 plt.xlabel('Average Placement')
 plt.ylabel('Season')
